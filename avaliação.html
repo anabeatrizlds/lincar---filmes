@@ -1,0 +1,54 @@
+<?php 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>document</title>
+</head>
+<body>
+
+    <header>
+        <div class="caixa">
+            <header>
+                <div class="caixa">
+                    <ul>
+                    <a href="file:///C:/Users/Mondrone/Desktop/atividade_licar-sites-main/cadastro.html"><button>CADASTRO</button></a>
+                    <a href="file:///C:/Users/Mondrone/Desktop/atividade_licar-sites-main/produtos.html"><button>PRODUTOS</button></a>
+                    <a href="file:///C:/Users/Mondrone/Desktop/atividade_licar-sites-main/avalia%C3%A7%C3%A3o.html"><button>SEU DESCONTO</button></a>
+                    <a href="file:///C:/Users/Mondrone/Desktop/atividade_licar-sites-main/satisfa%C3%A7%C3%A3o.html"><button>AVALIAÇÃO</button></a>
+                </div>
+            </header>
+        </div>
+    </header>
+        </div>
+    </header>
+    
+
+    <script src="seuarquivo.js"></script>
+    <p>Insira o valor total da sua compra:</p>
+    <input type="number" id="valorCompra" placeholder="Insira o valor em R$">
+    <button onclick="calcularDesconto()">Calcular Desconto</button>
+    <p>Desconto aplicado: <span id="desconto"></span></p>
+
+    <script>
+        function calcularDesconto() {
+            const valorCompra = parseFloat(document.getElementById('valorCompra').value);
+
+            let desconto = 0;
+
+            if (valorCompra > 200) {
+                desconto = 0.2; // 20%
+            } else if (valorCompra > 100) {
+                desconto = 0.1; // 10%
+            }
+            else if(valorCompra<=100){
+                desconto=0.05;
+
+            }
+
+            const valorDesconto = valorCompra * desconto;
+            document.getElementById('desconto').textContent = `R$ ${valorDesconto.toFixed(2)}`;
+        }
+    </script>
+
+</body>
+</html>
